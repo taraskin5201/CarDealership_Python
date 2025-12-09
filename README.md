@@ -1,72 +1,83 @@
-# Автосалон: Облік продажу автомобілів
+# Car Dealership: Vehicle Sales Management
 
-Цей додаток призначений для обліку продажу автомобілів в автосалоні, управління співробітниками, автомобілями, продажами та генерації звітів. Проєкт розроблений відповідно до принципів SOLID, з використанням патернів проектування та покритий тестами на основі PyTest.
+This application is designed for managing car sales in a dealership, including employee management, vehicle tracking, sales, and report generation. The project is developed following SOLID principles, using design patterns, and covered with PyTest-based tests.
 
-## Основний функціонал
+## Main Functionality
 
-- **Управління співробітниками:**
-  - Додавання нового співробітника
-  - Редагування даних співробітника
-  - Видалення співробітника
+* **Employee Management:**
 
-- **Управління автомобілями:**
-  - Додавання нового автомобіля
-  - Редагування даних автомобіля
-  - Видалення автомобіля
+  * Add a new employee
+  * Edit employee information
+  * Delete an employee
 
-- **Продажі:**
-  - Реєстрація нового продажу
-  - Перегляд усіх продажів
-  - Генерація звіту про продажі
+* **Car Management:**
 
-- **Звіти:**
-  - Генерація звітів за певний період
-  - Експорт звітів у файл
+  * Add a new car
+  * Edit car information
+  * Delete a car
 
-## Використані класи та принципи SOLID
+* **Sales:**
 
-Програма розроблена з дотриманням принципів SOLID:
+  * Register a new sale
+  * View all sales
+  * Generate sales reports
 
-1. **S - Принцип єдиної відповідальності (SRP):**
-   - `Employee`: відповідає за управління даними співробітників.
-   - `Car`: відповідає за дані автомобілів.
-   - `Sale`: управляє продажами.
+* **Reports:**
 
-2. **O - Принцип відкритості/закритості (OCP):**
-   - Класи легко розширюються за допомогою наслідування, але не потребують змін базового коду.
+  * Generate reports for a specific period
+  * Export reports to a file
 
-3. **L - Принцип підстановки Лісков (LSP):**
-   - Усі підкласи (`ElectricCar`, `SportCar`) можуть заміняти базовий клас `Car`.
+## Classes and SOLID Principles
 
-4. **I - Принцип розділення інтерфейсів (ISP):**
-   - Використання інтерфейсів для звітності, зокрема `IReportGenerator`.
+The program is developed following SOLID principles:
 
-5. **D - Принцип інверсії залежностей (DIP):**
-   - Використання абстракцій (`IReportGenerator`) для генерації звітів, а не конкретних класів.
+1. **S - Single Responsibility Principle (SRP):**
 
-### Основні класи
+   * `Employee`: manages employee data.
+   * `Car`: stores car information.
+   * `Sale`: manages sales.
 
-- `Car`: базовий клас для зберігання інформації про автомобіль.
-- `ElectricCar`: підклас `Car`, що додає параметри для електромобілів.
-- `SportCar`: підклас `Car` для спортивних автомобілів.
-- `Employee`: зберігає інформацію про співробітника автосалону.
-- `Sale`: зберігає інформацію про продаж (автомобіль, покупець, дата продажу).
-- `ReportGenerator`: відповідає за створення звітів.
-- `CarDealership`: головний клас для управління автосалоном.
+2. **O - Open/Closed Principle (OCP):**
 
-## Використання
+   * Classes are easily extendable via inheritance without modifying existing code.
 
-### Вимоги
-- Python 3.12
-- PyTest
+3. **L - Liskov Substitution Principle (LSP):**
 
-### Тестування
-Проєкт покритий тестами, використовуючи PyTest.
+   * All subclasses (`ElectricCar`, `SportCar`) can replace the base `Car` class.
+
+4. **I - Interface Segregation Principle (ISP):**
+
+   * Interfaces are used for reporting, e.g., `IReportGenerator`.
+
+5. **D - Dependency Inversion Principle (DIP):**
+
+   * Uses abstractions (`IReportGenerator`) for report generation instead of concrete classes.
+
+### Key Classes
+
+* `Car`: base class for storing car information.
+* `ElectricCar`: subclass of `Car` with additional parameters for electric vehicles.
+* `SportCar`: subclass of `Car` for sports cars.
+* `Employee`: stores dealership employee information.
+* `Sale`: stores sale information (car, buyer, sale date).
+* `ReportGenerator`: handles report creation.
+* `CarDealership`: main class for managing the dealership.
+
+## Usage
+
+### Requirements
+
+* Python 3.12
+* PyTest
+
+### Testing
+
+The project is covered with tests using PyTest:
 
 ```bash
 pytest
 ```
 
-## Ліцензія
-MIT License
+## License
 
+MIT License
